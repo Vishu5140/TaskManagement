@@ -7,7 +7,7 @@ export default function Team() {
   const { data } = useData()
 
   if (currentUser.role !== 'admin') {
-    return <Navigate to="/dashboard" />
+    return <Navigate to="dashboard" />
   }
 
   return (
@@ -27,7 +27,7 @@ export default function Team() {
           return (
             <div key={user.id} className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 hover:shadow-md transition-shadow">
               <div className="flex items-start gap-4">
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center font-bold text-lg text-white ${isAdmin ? 'bg-gradient-to-br from-amber-400 to-orange-500' : 'bg-gradient-to-br from-indigo-400 to-purple-500'}`}>
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center font-bold text-lg text-white ${isAdmin ? 'bg-linear-to-br from-amber-400 to-orange-500' : 'bg-linear-to-br from-indigo-400 to-purple-500'}`}>
                   {user.name.charAt(0).toUpperCase()}
                 </div>
                 <div className="flex-1 min-w-0">

@@ -14,7 +14,7 @@ function AppRoutes() {
   if (!currentUser) {
     return (
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path="login" element={<Login />} />
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     )
@@ -25,10 +25,10 @@ function AppRoutes() {
     <Layout>
       <Routes>
         <Route path="/" element={<Navigate to="/dashboard" />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/tasks" element={<Tasks />} />
-        <Route path="/team" element={<Team />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="projects" element={<Projects />} />
+        <Route path="tasks" element={<Tasks />} />
+        <Route path="team" element={<Team />} />
         <Route path="*" element={<Navigate to="/dashboard" />} />
       </Routes>
     </Layout>

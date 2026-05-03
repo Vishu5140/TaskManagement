@@ -11,17 +11,17 @@ export default function Layout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   if (!currentUser) {
-    navigate('/login')
+    navigate('login')
     return null
   }
 
   const isAdmin = currentUser.role === 'admin'
 
   const navItems = [
-    { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { path: '/projects', label: 'Projects', icon: FolderKanban },
-    { path: '/tasks', label: 'Tasks', icon: CheckSquare },
-    ...(isAdmin ? [{ path: '/team', label: 'Team', icon: Users }] : []),
+    { path: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
+    { path: 'projects', label: 'Projects', icon: FolderKanban },
+    { path: 'tasks', label: 'Tasks', icon: CheckSquare },
+    ...(isAdmin ? [{ path: 'team', label: 'Team', icon: Users }] : []),
   ]
 
   const overdueCount = data.tasks.filter(t => t.status === 'overdue').length
@@ -53,7 +53,7 @@ export default function Layout({ children }) {
         {/* user info */}
         <div className="px-6 pb-4 border-b border-slate-700">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center font-bold text-sm">
+            <div className="w-10 h-10 rounded-full bg-linear-to-br from-indigo-400 to-purple-500 flex items-center justify-center font-bold text-sm">
               {currentUser.name.charAt(0).toUpperCase()}
             </div>
             <div className="flex-1 min-w-0">
@@ -97,7 +97,7 @@ export default function Layout({ children }) {
 
         {/* logout */}
         <div className="p-4 border-t border-slate-700">
-          <button onClick={() => { logout(); navigate('/login') }}
+          <button onClick={() => { logout(); navigate('login') }}
             className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-slate-400 hover:text-red-400 hover:bg-slate-800 w-full transition-colors">
             <LogOut className="w-5 h-5" />
             Logout
