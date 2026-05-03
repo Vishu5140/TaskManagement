@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AppProviders, useAuth } from './store'
 import Login from './components/Login'
 import Layout from './components/Layout'
@@ -37,10 +37,10 @@ function AppRoutes() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AppProviders>
         <AppRoutes />
       </AppProviders>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
